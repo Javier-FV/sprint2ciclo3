@@ -130,6 +130,3 @@ dmypy.json
 .pyre/
 
 .vscode/
-__pycache__/main.cpython-38.pyc
-db/__pycache__/user_db.cpython-38.pyc
-models/__pycache__/user_models.cpython-38.pyc
