@@ -1,7 +1,7 @@
 from typing import Dict
 from db.user_db import UserInDB
 from typing import Dict
-from db.user_db import update_user, get_user, database_users, verificador
+from db.user_db import get_user, database_users, verificador
 from models.user_models import UserIn, UserOut
 import egresos
 
