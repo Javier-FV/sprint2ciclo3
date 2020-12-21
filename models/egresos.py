@@ -7,9 +7,9 @@ class Egresos(BaseModel):
     descripcion:str
     frecuencia:str
     importe:float
-    fecha_de_vencimiento:datetime
+    fecha_de_vencimiento:str
     estado:str
-    categoría:str
-    fecha_lanzamiento:datetime
-    fecha_pago:datetime
+    categoria:str
+    fecha_lanzamiento:str
+    fecha_pago:str
     observaciones:str

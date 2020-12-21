@@ -5,6 +5,16 @@ from models.egresos import Egresos
 
 class EgresoInDb(BaseModel):
     username: str
+    descripcion: str
+    frecuencia: str
+    importe: str
+    fecha_de_vencimiento: str
+    estado: str
+    categoria: str
+    fecha_lanzamiento: str
+    fecha_pago: str
+    observaciones: str
+    username: str
 
 database_egresos = Dict[str,Egresos]
 
@@ -16,7 +26,7 @@ database_egresos = {
         "importe":330.0   ,
         "fecha_de_vencimiento":"2020-12-01 23:59:59.000000" ,
         "estado":"realizado" ,
-        "categoría":"Pagos Recurrentes",
+        "categoria":"Pagos Recurrentes",
         "fecha_lanzamiento":"2020-11-01 08:59:00.000000" ,
         "fecha_pago":"2020-12-01 00:00:00.000000",
         "observaciones":"Bueno" ,
@@ -29,7 +39,7 @@ database_egresos = {
         "importe": 75.0,
         "fecha_de_vencimiento": "2020-12-15 23:59:59.000000",
         "estado": "realizado",
-        "categoría": "Pagos Recurrentes",
+        "categoria": "Pagos Recurrentes",
         "fecha_lanzamiento": "2020-11-01 09:00:00.000000",
         "fecha_pago": "2020-12-10 00:00:00.000000",
         "observaciones": "Bueno",
@@ -42,7 +52,7 @@ database_egresos = {
         "importe": 45.0,
         "fecha_de_vencimiento": "2020-12-10 23:59:59.000000",
         "estado": "realizado",
-        "categoría": "Pagos Recurrentes",
+        "categoria": "Pagos Recurrentes",
         "fecha_lanzamiento": "2020-11-01 09:01:00.000000",
         "fecha_pago": "2020-12-10 00:00:00.000000",
         "observaciones": "Bueno",
@@ -55,20 +65,20 @@ database_egresos = {
         "importe": 45.0,
         "fecha_de_vencimiento": "2020-12-10 23:59:59.000000",
         "estado": "realizado",
-        "categoría": "Pagos Recurrentes",
+        "categoria": "Pagos Recurrentes",
         "fecha_lanzamiento": "2020-11-01 09:01:00.000000",
         "fecha_pago": "2020-12-10 00:00:00.000000",
         "observaciones": "Bueno",
         "username": "Walther"
     }),
-    4: Egresos(**{
-        "Idegresos": 4,
+    5: Egresos(**{
+        "Idegresos": 5,
         "descripcion": "Pago Acueducto",
         "frecuencia": "mensual",
-        "importe": 45.0,
-        "fecha_de_vencimiento": "2020-12-10 23:59:59.000000",
+        "importe": 70.0,
+        "fecha_de_vencimiento": "2020-12-13 23:59:59.000000",
         "estado": "realizado",
-        "categoría": "Pagos Recurrentes",
+        "categoria": "Pagos Recurrentes",
         "fecha_lanzamiento": "2020-11-01 09:01:00.000000",
         "fecha_pago": "2020-12-10 00:00:00.000000",
         "observaciones": "Bueno",
@@ -88,5 +98,4 @@ def set_egreso(egreso_in_db: Egresos):
     return egreso_in_db
 
 async def get_user_egresos(username: str):
-    print(username)
     return username
