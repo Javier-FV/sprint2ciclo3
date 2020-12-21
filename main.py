@@ -71,18 +71,7 @@ async def update_user(username: str, user_in_db: UserInDB):
     
     except:
         raise HTTPException(status_code=404, detail="No existe el usuario")
-#-----------q
-
-@api.get("/users/question/", response_model=Dict[str, Userq])
-async def get_q_user():
-    return database_users_q
-
-
-@api.post("/users/question/crear/")      
-def savequestion(userq:Userq):
-    set_user_q(userq)
-    return "Gracias por su colaboracion"
-        
+      
     
     return user_in_db
 
@@ -95,3 +84,15 @@ async def delete_user(username: str):
     
     except:
         raise HTTPException(status_code=404, detail="Usuario no existe")
+        
+ #-----------q
+
+@api.get("/users/question/", response_model=Dict[str, Userq])
+async def get_q_user():
+    return database_users_q
+
+
+@api.post("/users/question/crear/")      
+def savequestion(userq:Userq):
+    set_user_q(userq)
+    return "Gracias por su colaboracion"       
