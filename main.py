@@ -1,7 +1,7 @@
 from db.ingre_db import IngresoInDB
 from typing import Dict
 from db.ingre_db import update_ingreso, get_ingreso, database_ingresos, verificador
-from models.ingreso_models import IngresoIn, IngresoOut
+from db.ingre_db import IngresoIn, IngresoOut
 from db.user_db import UserInDB
 from typing import Dict
 from db.user_db import update_user, get_user, database_users, verificador
@@ -100,41 +100,3 @@ async def get_q_user():
 def savequestion(userq:Userq):
     set_user_q(userq)
     return "Gracias por su colaboracion"       
-
-@api.get("/",)
-def inicio():
-    return "Registro de Ingresos"
-
-@api.get("/users/all/{Lista de Ingresos}", response_model=Dict[str, IngresoInDB])
-async def get_ingresos():
-    return database_ingresos
-
-@api.post("/users/user/data/create/{Registrar Ingreso}")      
-async def update_ingreso(Idingreso: str, ingreso_in_db: IngresoInDB):
-    ingreso_in_db2 = verificador(Idingreso) 
-    if ingreso_in_db2 == None:
-        database_ingresos[Idingreso] = ingreso_in_db
-        return ingreso_in_db
-    return {"El ingreso ya existe"}
-    
-@api.put("/users/user/data/update/{Actualizar Ingreso}")      
-async def update_ingreso(Idingreso: str, ingreso_in_db: IngresoInDB):
-    
-    try:
-        database_ingresos[Idingreso] = ingreso_in_db
-        return database_ingresos[Idingreso]
-    
-    except:
-        raise HTTPException(status_code=404, detail="No existe el usuario")
-    return ingreso_in_db
-
-@api.delete("/users/user/delete/{Eliminar Ingreso}")
-async def delete_ingreso(Idingreso: str):
-    
-    try:
-        del database_ingresos[Idingreso]
-        return database_ingresos, {"El ingreso de referencia " + Idingreso + " ha sido Eliminado"}
-    
-    except:
-        raise HTTPException(status_code=404, detail="El ingreso de referencia " + Idingreso +  " no existe")
-

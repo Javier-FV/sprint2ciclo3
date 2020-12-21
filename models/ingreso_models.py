@@ -3,6 +3,7 @@ from datetime import datetime
 
 class IngresoIn(BaseModel):
     Idingreso: str
+    
 class IngresoOut(BaseModel):
     Idingreso: str
     descripcion:str
