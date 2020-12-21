@@ -52,22 +52,3 @@ def verificador(username: str):
     else:
         return None
         print("None")
-
-def update_user(user_in_db: UserInDB,contrasena_in_db: UserInDB,
-                nombre_in_db : UserInDB,apellido_in_db: UserInDB,
-                correo_in_db : UserInDB,ciudad_in_db : UserInDB,
-                edad_in_db : UserInDB,estrato_in_db: UserInDB,
-                ocupacion_in_db: UserInDB,estado_civil_in_db: UserInDB,
-                numero_hijos_in_db: UserInDB):
-    database_users[user_in_db.username] = user_in_db
-    database_users[contrasena_in_db.password] = contrasena_in_db
-    database_users[nombre_in_db.nombre] = nombre_in_db
-    database_users[apellido_in_db.apellido] = apellido_in_db
-    database_users[correo_in_db.correo] = correo_in_db
-    database_users[ciudad_in_db.ciudad] = ciudad_in_db
-    database_users[edad_in_db.edad] = edad_in_db
-    database_users[estrato_in_db.estrato] = estrato_in_db
-    database_users[ocupacion_in_db.ocupacion] = ocupacion_in_db
-    database_users[estado_civil_in_db.estado_civil] = estado_civil_in_db
-    database_users[numero_hijos_in_db.numero_hijos] = numero_hijos_in_db
-    return user_in_db
