@@ -1,7 +1,7 @@
-from db.ingre_db import IngresoInDB
+from db.ingreso_db import IngresoInDB
 from typing import Dict
-from db.ingre_db import update_ingreso, get_ingreso, database_ingresos, verificador
-from db.ingre_db import IngresoIn, IngresoOut
+from db.ingreso_db import update_ingreso, get_ingreso, database_ingresos, verificador
+from db.ingreso_db import IngresoIn, IngresoOut
 from db.user_db import UserInDB
 from typing import Dict
 from db.user_db import update_user, get_user, database_users, verificador
