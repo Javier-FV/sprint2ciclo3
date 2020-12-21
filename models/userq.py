@@ -14,4 +14,7 @@ class Userq(BaseModel):
     question10:int
     question11:int
     question12:int
+    question13:int
+    question14:int
+    question15:int
     
