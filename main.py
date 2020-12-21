@@ -1,7 +1,4 @@
-from db.ingre_db import IngresoInDB
 from typing import Dict
-from db.ingre_db import update_ingreso, get_ingreso, database_ingresos, verificador
-from db.ingre_db import IngresoIn, IngresoOut
 from db.user_db import UserInDB
 from typing import Dict
 from db.user_db import update_user, get_user, database_users, verificador
@@ -37,15 +34,15 @@ def inicio():
 async def get_users():
     return database_users
 
-@api.post("/users/user/data/create/{username}")      
+@api.post("/users/user/data/create/{username}")
 async def update_user(username: str, user_in_db: UserInDB):
-    user_in_db2 = verificador(username) 
+    user_in_db2 = verificador(username)
     if user_in_db2 == None:
         database_users[username] = user_in_db
         return user_in_db
     return {"Usuario ya existe"}
     # return database_users[username]
-    
+
 
 @api.post("/users/user/auth/")
 async def auth_user(user_in: UserIn):
@@ -66,29 +63,29 @@ async def get_balance(username: str):
     user_out = UserOut(**user_in_db.dict())
     return user_out
 
-@api.put("/users/user/data/update/{username}")      
+@api.put("/users/user/data/update/{username}")
 async def update_user(username: str, user_in_db: UserInDB):
-    
+
     try:
         database_users[username] = user_in_db
         return database_users[username]
-    
+
     except:
         raise HTTPException(status_code=404, detail="No existe el usuario")
-      
-    
+
+
     return user_in_db
 
 @api.delete("/users/user/delete/{username}")
 async def delete_user(username: str):
-    
+
     try:
         del database_users[username]
         return database_users, {"Usuario " + username + " Eliminado"}
-    
+
     except:
         raise HTTPException(status_code=404, detail="Usuario no existe")
-        
+
  #-----------q
 
 @api.get("/users/question/", response_model=Dict[str, Userq])
@@ -96,7 +93,7 @@ async def get_q_user():
     return database_users_q
 
 
-@api.post("/users/question/crear/")      
+@api.post("/users/question/crear/")
 def savequestion(userq:Userq):
     set_user_q(userq)
-    return "Gracias por su colaboracion"       
+    return "Gracias por su colaboracion"
