@@ -4,6 +4,9 @@ from db.user_db import update_user, get_user, database_users, verificador
 from models.user_models import UserIn, UserOut
 import egresos
 
+from db.user_q_db import Userq
+from models.userq import Userq
+from db.user_q_db import database_users_q, get_user_q, set_user_q
 
 import datetime
 from fastapi import FastAPI
@@ -68,6 +71,17 @@ async def update_user(username: str, user_in_db: UserInDB):
     
     except:
         raise HTTPException(status_code=404, detail="No existe el usuario")
+#-----------q
+
+@api.get("/users/question/", response_model=Dict[str, Userq])
+async def get_q_user():
+    return database_users_q
+
+
+@api.post("/users/question/crear/")      
+def savequestion(userq:Userq):
+    set_user_q(userq)
+    return "Gracias por su colaboracion"
         
     
     return user_in_db
