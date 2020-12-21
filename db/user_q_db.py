@@ -18,7 +18,10 @@ database_users_q = {
                             "question9":9,
                             "question10":10,
                             "question11":11,
-                            "question12":12
+                            "question12":12,
+                            "question12":13,
+                            "question12":14,
+                            "question12":15
                                                  }),
     "Alvarado5": Userq(**{"username":"Alvarado5",
                             "question1":1,
@@ -32,7 +35,10 @@ database_users_q = {
                             "question9":9,
                             "question10":10,
                             "question11":11,
-                            "question12":12
+                            "question12":12,
+                            "question12":13,
+                            "question12":14,
+                            "question12":15
                             }),
 }
 
