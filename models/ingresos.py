@@ -1,15 +1,15 @@
 from pydantic import BaseModel
 from datetime import datetime
 
-class Ingresos(BaseModel):
-    Idigresos:int
-    username:str
+class IngresoIn(BaseModel):
+    Idingreso: str
+class IngresoOut(BaseModel):
+    Idingreso: str
     descripcion:str
-    frecuencia:str 
-    importe:float
-    fecha_de_vencimiento:datetime
+    frecuencia:str
+    valor:float
     estado:str
-    categoría:str
+    categoria:str
     fecha_lanzamiento:datetime
-    fecha_pago:datetime
     observaciones:str
+ 
